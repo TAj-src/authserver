@@ -1,11 +1,11 @@
-LinBPQ Authserver
+# LinBPQ Authserver
 
 
 One Time Passcode server to enable RF only local URL calls. Output from the fetch URL is displayed to the user.
 
 
 make with 
-  make
+  ```make```
 
 
 edit 'creds' file with callsign (uppercase) and password
@@ -18,13 +18,12 @@ From the commandline, run the CmdLineAuth program (supplied with LinBPQ (make Cm
 with your password and the OTP code appended
 
 e.g. 
-  ./CmdLineAuth mypassword12345
+  ```./CmdLineAuth mypassword12345```
 
 
-usage:
+# Usage:
 
-
-BEX:GB7BEX-7} Ok
+``` BEX:GB7BEX-7} Ok
 authserver
 *** Connected to AUTHSERVER      
 Your code=789383
@@ -34,6 +33,7 @@ Code verified
 2. Relays Off
 3. Restart pi
 Enter your choice (0 to exit): 2
+
 <a href="https://nextnavigation.com/lease3">Moved Permanently</a>.
 
 1. Relays On
@@ -41,3 +41,6 @@ Enter your choice (0 to exit): 2
 3. Restart pi
 Enter your choice (0 to exit): 0
 Returned to Node BEX:GB7BEX-7
+```
+
+G7TAJ@GB7BEX.#38.GBR.EURO
