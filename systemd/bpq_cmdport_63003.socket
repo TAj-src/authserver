@@ -1,0 +1,14 @@
+[Unit]
+Description=Linbpq OTP AUTH
+DefaultDependencies=no
+
+[Socket]
+ListenStream=127.0.0.1:63001
+Accept=yes
+MaxConnections=10
+KeepAlive=true
+WorkingDirectory=/home/<USERNAME>/scripts
+Reuse=on
+
+[Install]
+WantedBy=sockets.target

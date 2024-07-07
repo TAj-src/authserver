@@ -1,0 +1,12 @@
+
+[Unit]
+Description=Linbpq OTP AuthScript
+DefaultDependencies=no
+
+[Service]
+ExecStart=-/home/<USERNAME>/scripts/authserver
+User=linbpq_srv
+StandardInput=socket
+Type=simple
+KillSignal=SIGKILL
+
