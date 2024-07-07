@@ -11,7 +11,7 @@ make with
 edit 'creds' file with callsign (uppercase) and password
 edit 'menu' file with description and the url to be called.
 
-create a CMDPORT application ( ) and a systemd service/socket pair (files included)
+create a CMDPORT application [BPQ CMDPORT](https://www.cantab.net/users/john.wiseman/Documents/LinBPQ%20Applications%20Interface.html ) and a systemd service/socket pair (files included)
 
 The server takes the file supplied password and adds the 'code' passed to the user.
 From the commandline, run the CmdLineAuth program (supplied with LinBPQ (make CmdLineAuth)) and generate a code
