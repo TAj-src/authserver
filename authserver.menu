@@ -1,0 +1,3 @@
+Relays On,http://www.this.com?status=on
+Relays Off,http://www.this.com?status=off
+Restart pi,http://restartme
