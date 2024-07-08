@@ -4,6 +4,7 @@ Written by G7TAJ 2024
 
 https://github.com/taj-src
 
+Portions (c) G8BPQ - from the LinBPQ/BPQ32 suite
 
 You should have received a copy of the GNU General Public License
 along with this code.  If not, see http://www.gnu.org/licenses
