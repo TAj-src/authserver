@@ -5,7 +5,11 @@ One Time Passcode server to enable RF only local URL calls. Output from the fetc
 
 
 make with 
-  ```make```
+	```make```
+
+(Note: you may need to add  libcurl)
+
+	```sudo apt-get install libcurl4-gnutls-dev```
 
 
 edit 'creds' file with callsign (uppercase) and password
@@ -18,7 +22,7 @@ From the commandline, run the CmdLineAuth program (supplied with LinBPQ (make Cm
 with your password and the OTP code appended
 
 e.g. 
-  ```./CmdLineAuth mypassword12345```
+	```./CmdLineAuth mypassword12345```
 
 
 # Usage:
