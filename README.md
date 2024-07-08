@@ -5,11 +5,12 @@ One Time Passcode server to enable RF only local URL calls. Output from the fetc
 
 
 make with 
-	```make```
+  ```make```
 
 (Note: you may need to add  libcurl)
 
-	```sudo apt-get install libcurl4-gnutls-dev```
+  ```sudo apt-get install libcurl4-gnutls-dev```
+ 
 
 
 edit 'creds' file with callsign (uppercase) and password
