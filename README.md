@@ -16,6 +16,16 @@ make with
 edit 'creds' file with callsign (uppercase) and password
 edit 'menu' file with description and the url to be called.
 
+#Menu format
+
+Menu Display Option Text, action url or command, type
+
+type:
+	c = CURL
+	b = BASH (well, SH)
+
+
+
 create a CMDPORT application [BPQ CMDPORT](https://www.cantab.net/users/john.wiseman/Documents/LinBPQ%20Applications%20Interface.html ) and a systemd service/socket pair (files included)
 
 The server takes the file supplied password and adds the 'code' passed to the user.
