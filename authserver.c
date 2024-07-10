@@ -133,12 +133,9 @@ BOOL CheckOneTimePassword(char * Password, char * KeyPhrase)
 
 
 void do_menu_action_bash( char * action ) {
-
-    char *args[] = {"sh", "-c", action, NULL};
-char args2[100];
-sprintf(args2, "sh -c %s", action);
-//    execve("/bin/sh", args, NULL);
-    system(args2);
+    char args[100];
+    sprintf(args, "sh -c %s", action);
+    system(args);
 }
 
 void do_menu_action_curl( char * action ) {
