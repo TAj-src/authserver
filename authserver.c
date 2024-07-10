@@ -4,7 +4,6 @@ Written by G7TAJ 2024
 
 https://github.com/taj-src
 
-Portions (c) G8BPQ - from the LinBPQ/BPQ32 suite
 
 You should have received a copy of the GNU General Public License
 along with this code.  If not, see http://www.gnu.org/licenses
@@ -38,6 +37,19 @@ char PROGDIR[1024];
 
 typedef int  int32_t;
 typedef unsigned   uint32_t;
+
+#define MAX_MENU_ITEMS 100
+#define MAX_LENGTH 50
+#define ACTION_LENGTH 500
+
+typedef struct MenuItem {
+    char text[MAX_LENGTH];
+    char action[ACTION_LENGTH];
+    char type;
+} MenuItem;
+
+
+
 
 #include "md5_authserver.c"
 
@@ -120,18 +132,16 @@ BOOL CheckOneTimePassword(char * Password, char * KeyPhrase)
 }
 
 
-#define MAX_MENU_ITEMS 100
-#define MAX_LENGTH 50
-#define ACTION_LENGTH 500
+void do_menu_action_bash( char * action ) {
 
-typedef struct MenuItem {
-    char text[MAX_LENGTH];
-    char action[ACTION_LENGTH];
-} MenuItem;
+    char *args[] = {"sh", "-c", action, NULL};
+char args2[100];
+sprintf(args2, "sh -c %s", action);
+//    execve("/bin/sh", args, NULL);
+    system(args2);
+}
 
-
-
-void do_menu_action( char * action ) {
+void do_menu_action_curl( char * action ) {
 
     CURL *curl;
     CURLcode res;
@@ -218,7 +228,7 @@ int do_menu() {
 
 
     while (fgets(line, sizeof(line), file) != NULL) {
-        sscanf(line, "%[^,],%s", menu[index].text, menu[index].action);
+        sscanf(line, "%[^,],%[^,],%c", menu[index].text, menu[index].action, &menu[index].type);
         index++;
     }
 
@@ -237,7 +247,15 @@ int do_menu() {
     while ((c = getchar()) != '\n' && c != EOF);
 
         if (choice >= 1 && choice <= index) {
-            do_menu_action( menu[choice - 1].action );
+
+	  switch (menu[choice - 1].type) {
+		case 'c':  do_menu_action_curl( menu[choice - 1].action );
+			  break;
+		case 'b':  do_menu_action_bash( menu[choice - 1].action );
+			  break;
+		default:  printf("Menu system Error\n");
+			  exit;
+	  }
         }
     } while (choice != 0);
 
@@ -271,6 +289,7 @@ void main ()
         if ( tries >1 )
 	   return;
 
+	srand(time(NULL));
         random_number = rand() % 900000 + 100000;
 	sprintf(FILEPASSWD,"%s%d", FILEPASSWD, random_number);
 
