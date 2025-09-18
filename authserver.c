@@ -39,7 +39,7 @@ typedef int  int32_t;
 typedef unsigned   uint32_t;
 
 #define MAX_MENU_ITEMS 100
-#define MAX_LENGTH 50
+#define MAX_LENGTH 100
 #define ACTION_LENGTH 500
 
 typedef struct MenuItem {
