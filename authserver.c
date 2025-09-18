@@ -15,7 +15,7 @@ along with this code.  If not, see http://www.gnu.org/licenses
  See https://github.com/taj-src/authserver for more details
 
  Use the LinBPQ CmdLineAuth program to generate auth codes appending the OTP to the end of your password
-
+ Code parts for auth from G8BPQ LinBPQ project (c)
 */
 
 #include <stdlib.h>
